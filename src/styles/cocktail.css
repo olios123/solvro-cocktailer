@@ -1,0 +1,8 @@
+.cocktail {
+  display: flex;
+  background-color: var(--items-color);
+  padding: 1em;
+  border-radius: 0.75em;
+}
+
+/*# sourceMappingURL=cocktail.css.map */

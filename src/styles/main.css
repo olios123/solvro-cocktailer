@@ -1,0 +1,91 @@
+@import "root.css";
+@import url("https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: var(--font-color);
+}
+
+i {
+  font-size: 2em;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+ul, ol {
+  list-style-type: none;
+  display: flex;
+}
+
+header {
+  padding: 2em;
+}
+header ol {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header ol li {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+}
+main * {
+  width: 100%;
+}
+main section {
+  display: flex;
+  padding: 1em;
+}
+main section.cocktail-list {
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+input {
+  display: flex;
+  padding: 0.5em 1em;
+  border: none;
+  outline: none;
+  background-color: var(--items-color);
+  border-radius: 0.75em;
+  font-size: 1em;
+  max-width: 800px;
+  text-align: center;
+}
+
+.cocktail {
+  display: flex;
+  background-color: var(--items-color);
+  padding: 1em;
+  border-radius: 0.75em;
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, transform;
+  cursor: pointer;
+  position: relative;
+}
+.cocktail:hover {
+  background-color: #D3DAD9;
+  transform: scale(1.05);
+}
+
+/*# sourceMappingURL=main.css.map */
