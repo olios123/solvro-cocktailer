@@ -5,12 +5,14 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 const app = ReactDOM.createRoot(
-  document.getElementById('components') as HTMLElement
+  document.getElementById('app') as HTMLElement
 );
 app.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
+
+    // <App />
 );
 
 // If you want to start measuring performance in your components, pass a function

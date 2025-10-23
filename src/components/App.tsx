@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Cocktail from './Cocktail';
+import cocktail from "./Cocktail";
 // import logo from '../logo.svg';
 // import './App.css';
 
@@ -14,6 +16,11 @@ interface Cocktail {
     createdAt: string;
     updatedAt: string;
 }
+
+function Test(params: { name: any; }) {
+    return params.name;
+}
+
 
 function App() {
     const [cocktails, setCocktails] = useState<Cocktail[]>([]);
@@ -33,19 +40,25 @@ function App() {
     return (
         <div>
             <h1>Lista koktajli</h1>
-            {cocktails.map((cocktail) => (
-                <div key={cocktail.id} style={{ marginBottom: '20px' }}>
-                    <h2>{cocktail.name}</h2>
-                    <p><strong>Kategoria:</strong> {cocktail.category}</p>
-                    <p><strong>Instrukcje:</strong> {cocktail.instructions}</p>
-                    <img
-                        src={cocktail.imageUrl}
-                        alt={cocktail.name}
-                        width="150"
-                        style={{ borderRadius: '8px' }}
-                    />
-                </div>
-            ))}
+            {/*{cocktails.map((cocktail) => {*/}
+            {/*    <Cocktail cocktail={cocktail} />*/}
+            {/*})}*/}
+
+            <Test name="123"/>
+
+            {/*{cocktails.map((cocktail) => (*/}
+            {/*    <div key={cocktail.id} style={{ marginBottom: '20px' }}>*/}
+            {/*        <h2>{cocktail.name}</h2>*/}
+            {/*        <p><strong>Kategoria:</strong> {cocktail.category}</p>*/}
+            {/*        <p><strong>Instrukcje:</strong> {cocktail.instructions}</p>*/}
+            {/*        <img*/}
+            {/*            src={cocktail.imageUrl}*/}
+            {/*            alt={cocktail.name}*/}
+            {/*            width="150"*/}
+            {/*            style={{ borderRadius: '8px' }}*/}
+            {/*        />*/}
+            {/*    </div>*/}
+            {/*))}*/}
         </div>
     );
 }
