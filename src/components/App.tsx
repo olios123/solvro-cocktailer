@@ -5,7 +5,7 @@ import cocktail from "./Cocktail";
 // import logo from '../logo.svg';
 // import './App.css';
 
-interface Cocktail {
+interface CK {
     id: number;
     name: string;
     category: string;
@@ -17,13 +17,8 @@ interface Cocktail {
     updatedAt: string;
 }
 
-function Test(params: { name: any; }) {
-    return params.name;
-}
-
-
 function App() {
-    const [cocktails, setCocktails] = useState<Cocktail[]>([]);
+    const [cocktails, setCocktails] = useState<CK[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -40,11 +35,9 @@ function App() {
     return (
         <div>
             <h1>Lista koktajli</h1>
-            {/*{cocktails.map((cocktail) => {*/}
-            {/*    <Cocktail cocktail={cocktail} />*/}
-            {/*})}*/}
-
-            <Test name="123"/>
+            {cocktails.map((cocktail) => (
+                <Cocktail cocktail={cocktail}/>
+            ))}
 
             {/*{cocktails.map((cocktail) => (*/}
             {/*    <div key={cocktail.id} style={{ marginBottom: '20px' }}>*/}
