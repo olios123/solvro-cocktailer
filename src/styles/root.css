@@ -1,6 +1,12 @@
 :root {
-	--background-color: #37353E;
-	--items-color: #44444E;
-	--accent-color: #715A5A;
-	--font-color: #D3DAD9;
+	--font-size: 16px;
+	--foreground: #0f1522;
+	--card-foreground: #162030;
+	--header-foreground: #0E1525;
+	--input-foreground: #1E2939;
+	--border: #364153;
+	--secondary: #eceef2;
+	--secondary-text: #78808e;
+	--accent: #f54900;
+	--accent-border: #ff6900;
 }

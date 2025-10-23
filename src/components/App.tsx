@@ -34,7 +34,6 @@ function App() {
 
     return (
         <div>
-            <h1>Lista koktajli</h1>
             {cocktails.map((cocktail) => (
                 <Cocktail cocktail={cocktail}/>
             ))}

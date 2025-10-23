@@ -1,8 +1,114 @@
 .cocktail {
   display: flex;
-  background-color: var(--items-color);
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 1rem;
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, transform, max-height, border, box-shadow;
+  position: relative;
+  overflow: hidden;
+  margin: 1em 0;
+  border: 1px solid var(--border);
+}
+.cocktail:hover {
+  transform: scale(1.025);
+  border-color: var(--accent-border);
+  -webkit-box-shadow: 4px 8px 24px -12px rgba(255, 105, 0, 0.8);
+  -moz-box-shadow: 4px 8px 24px -12px rgba(255, 105, 0, 0.8);
+  box-shadow: 4px 8px 24px -12px rgba(255, 105, 0, 0.8);
+}
+.cocktail:hover .cocktail-background img {
+  transform: scale(1.05);
+}
+.cocktail .cocktail-background {
+  display: flex;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.cocktail .cocktail-background img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
+  filter: brightness(80%);
+  transition: 0.3s ease-in-out transform;
+}
+.cocktail .cocktail-background .cocktail-type {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0.75em;
+  right: 0.75em;
+  width: fit-content;
+  border-radius: 0.5em;
+  padding: 0.1em 0.25em;
+  border: 1px solid;
+}
+.cocktail .cocktail-background .cocktail-type * {
+  color: var(--secondary);
+}
+.cocktail .cocktail-background .cocktail-type i {
+  font-size: 0.8em;
+  margin-right: 0.25em;
+  display: flex;
+}
+.cocktail .cocktail-background .cocktail-type p {
+  font-size: 0.8em;
+}
+.cocktail .cocktail-background .cocktail-type.cocktail-alcoholic {
+  background-color: var(--accent);
+  border-color: var(--accent-border);
+}
+.cocktail .cocktail-background .cocktail-favourite {
+  position: absolute;
+  top: 0.75em;
+  left: 0.75em;
+  background-color: var(--card-foreground);
+  width: fit-content;
+  padding: 0.5em;
+  border-radius: 100%;
+  backdrop-filter: blur(2em);
+  opacity: 90%;
+  cursor: pointer;
+}
+.cocktail .cocktail-background .cocktail-favourite i {
+  display: flex;
+  font-size: 1em;
+}
+.cocktail .cocktail-content {
+  display: flex;
+  flex-direction: column;
   padding: 1em;
-  border-radius: 0.75em;
+  background: #121A29;
+  background: linear-gradient(90deg, rgb(18, 26, 41) 0%, rgb(21, 31, 46) 100%);
+}
+.cocktail .cocktail-content .cocktail-name {
+  border-bottom: 2px solid var(--font-color);
+  font-weight: 600;
+  font-size: 1em;
+  display: flex;
+  margin-bottom: 0.5em;
+}
+.cocktail .cocktail-info {
+  display: flex;
+  width: 100%;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cocktail .cocktail-info li {
+  background-color: var(--input-foreground);
+  border-radius: 0.5em;
+  font-size: 0.7em;
+  font-weight: 400;
+  width: fit-content;
+  padding: 0.25em 0.5em;
+  border: 1px solid var(--border);
+}
+.cocktail p {
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--secondary-text);
 }
 
 /*# sourceMappingURL=cocktail.css.map */
