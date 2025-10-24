@@ -1,3 +1,57 @@
+.search {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 1em;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--search-foreground);
+  gap: 1em;
+}
+.search i {
+  display: flex;
+  font-size: 1em;
+}
+.search p {
+  color: var(--secondary-text);
+  font-size: 0.9em;
+}
+.search .search-input {
+  width: 100%;
+  position: relative;
+}
+.search .search-input input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: none;
+  font-size: 0.9em;
+  text-align: left;
+  padding-left: 2.5em;
+}
+.search .search-input input::placeholder {
+  color: color-mix(in srgb, var(--secondary-text) 80%, transparent);
+}
+.search .search-input i {
+  position: absolute;
+  top: 50%;
+  left: 0.75em;
+  transform: translateY(-50%);
+}
+.search .search-filter-options {
+  display: flex;
+  flex-direction: column;
+}
+.search .search-filter-options li {
+  display: flex;
+}
+.search .search-filter-options li:first-child i {
+  margin-right: 0.35rem;
+}
+.search .search-filter-options li * {
+  width: fit-content;
+  color: var(--secondary-text);
+}
+
 .cocktail {
   display: flex;
   justify-content: center;
@@ -109,6 +163,30 @@
   font-weight: 400;
   font-size: 0.9em;
   color: var(--secondary-text);
+}
+
+.page-list {
+  display: flex;
+  flex-direction: row;
+  padding: 1em 0;
+}
+.page-list ol {
+  gap: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-list ol li {
+  border-radius: 100%;
+  padding: 0.5em;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 42px;
+}
+.page-list ol li.current {
+  background-color: var(--accent);
 }
 
 /*# sourceMappingURL=cocktail.css.map */

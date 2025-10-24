@@ -75,9 +75,24 @@ header {
 		color: var(--secondary-text);
 	  }
 	}
+  }
+}
 
+footer {
+  background-color: var(--footer-foreground);
+  min-height: 64px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em 1em;
+  gap: 1em;
 
-
+  p {
+	color: var(--secondary-text);
+	font-size: 0.9em;
+	text-align: center;
   }
 }
 
@@ -137,4 +152,6 @@ input {
 #app {
   display: flex;
 }
+
+
 
