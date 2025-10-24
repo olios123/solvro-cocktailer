@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cocktail from './Cocktail';
-import cocktail from "./Cocktail";
 // import logo from '../logo.svg';
 // import './App.css';
 

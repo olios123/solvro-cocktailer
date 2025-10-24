@@ -32,6 +32,7 @@
   color: color-mix(in srgb, var(--secondary-text) 80%, transparent);
 }
 .search .search-input i {
+  width: min-content;
   position: absolute;
   top: 50%;
   left: 0.75em;
@@ -43,6 +44,15 @@
 }
 .search .search-filter-options li {
   display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  padding: 0.5em 0 0.25em 0;
+  margin: 0.25em 0;
+  row-gap: 0.5em;
+}
+.search .search-filter-options li:first-child {
+  flex-direction: row;
+  border-top: none;
 }
 .search .search-filter-options li:first-child i {
   margin-right: 0.35rem;
@@ -50,6 +60,31 @@
 .search .search-filter-options li * {
   width: fit-content;
   color: var(--secondary-text);
+}
+.search .search-filter-options li #cocktail-glasses,
+.search .search-filter-options li #cocktail-categories,
+.search .search-filter-options li #cocktail-alcohol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+.search .search-filter-options li #cocktail-glasses p,
+.search .search-filter-options li #cocktail-categories p,
+.search .search-filter-options li #cocktail-alcohol p {
+  background-color: var(--input-foreground);
+  padding: 0.2em 0.4em;
+  border-radius: 0.5em;
+  border: 1px solid var(--border);
+  font-size: 0.8em;
+  transition: 0.2s ease-in-out;
+  transition-property: border, background-color;
+  cursor: pointer;
+}
+.search .search-filter-options li #cocktail-glasses p:hover,
+.search .search-filter-options li #cocktail-categories p:hover,
+.search .search-filter-options li #cocktail-alcohol p:hover {
+  border: 1px solid var(--accent-border);
+  background-color: color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .cocktail {
@@ -167,26 +202,34 @@
 
 .page-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 1em 0;
 }
+.page-list > p {
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--secondary-text);
+  margin-top: 1em;
+}
 .page-list ol {
-  gap: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.25em;
 }
-.page-list ol li {
-  border-radius: 100%;
+.page-list ol li button {
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5em;
-  aspect-ratio: 1/1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 42px;
+  cursor: pointer;
 }
-.page-list ol li.current {
-  background-color: var(--accent);
+.page-list ol li button i {
+  font-size: 1em;
+  display: flex;
 }
 
 /*# sourceMappingURL=cocktail.css.map */

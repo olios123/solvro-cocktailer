@@ -137,7 +137,8 @@ main {
   }
 }
 
-input {
+input,
+button {
   display: flex;
   padding: 0.5em 1em;
   border: none;

@@ -122,7 +122,8 @@ main section.cocktail-list {
   row-gap: 0.5em;
 }
 
-input {
+input,
+button {
   display: flex;
   padding: 0.5em 1em;
   border: none;
