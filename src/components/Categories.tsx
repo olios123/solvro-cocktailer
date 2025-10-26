@@ -19,7 +19,7 @@ function Categories() {
     return (
         <>
             {categories.map((category) => (
-                <p>{category}</p>
+                <p key={category}>{category}</p>
             ))}
         </>
     );

@@ -19,7 +19,7 @@ function Glasses() {
     return (
         <>
             {glasses.map((glass) => (
-                <p>{glass}</p>
+                <p key={glass}>{glass}</p>
             ))}
         </>
     );

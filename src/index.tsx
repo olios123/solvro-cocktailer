@@ -3,22 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './styles/main.css';
 
 // Components
-import App from './components/App';
+import CocktailsList from './components/CocktailsList';
 import Glasses from './components/Glasses';
 import Categories from './components/Categories';
+import Pages from './components/Pages';
 
 import reportWebVitals from './reportWebVitals';
-
-// Main cocktails list
-const app = ReactDOM.createRoot(
-  document.getElementById('app') as HTMLElement
-);
-app.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-    // <App />
-);
 
 // Glasses list
 const glasses = ReactDOM.createRoot(
@@ -35,6 +25,25 @@ const categories = ReactDOM.createRoot(
 categories.render(
     <Categories/>
 )
+
+// Main cocktails list
+const cocktailsList = ReactDOM.createRoot(
+    document.getElementById('app') as HTMLElement
+);
+cocktailsList.render(
+    <React.StrictMode>
+        <CocktailsList />
+    </React.StrictMode>
+    // <App />
+);
+
+// // Pages list
+// const pagesList = ReactDOM.createRoot(
+//     document.getElementById('pages-list') as HTMLElement
+// )
+// pagesList.render(
+//     <Pages />
+// )
 
 // If you want to start measuring performance in your components, pass a function
 // to log results (for example: reportWebVitals(console.log))

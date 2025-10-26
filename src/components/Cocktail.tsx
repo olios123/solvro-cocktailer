@@ -15,7 +15,7 @@ function Cocktail(props: { cocktail: {
     updatedAt: string;
 }}) {
     return (
-        <article className="cocktail">
+        <article className="cocktail" key={props.cocktail.id}>
             <div className="cocktail-background">
                 <img
                     src={props.cocktail.imageUrl}
