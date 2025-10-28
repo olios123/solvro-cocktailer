@@ -81,13 +81,10 @@
 		  border-radius: 0.5em;
 		  border: 1px solid var(--border);
 		  font-size: 0.8em;
-		  transition: 0.2s ease-in-out;
-		  transition-property: border, background-color;
 		  cursor: pointer;
 
 		  &:hover {
 			border: 1px solid var(--accent-border);
-			background-color: color-mix(in srgb, var(--accent) 20%, transparent);
 		  }
 		}
 
@@ -99,15 +96,15 @@
 
 .cocktail {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   border-radius: 1rem;
   transition: 0.2s ease-in-out;
   transition-property: background-color, transform, max-height, border, box-shadow;
   position: relative;
   overflow: hidden;
-  margin: 1em 0;
   border: 1px solid var(--border);
+  background: #121A29;
+  background: linear-gradient(90deg,rgba(18, 26, 41, 1) 0%, rgba(21, 31, 46, 1) 100%);
 
   &:hover {
 	transform: scale(1.025);
@@ -129,7 +126,7 @@
 
 	img {
 	  width: 100%;
-	  height: auto;
+	  aspect-ratio: 1 / 1;
 	  border-radius: 0.5rem 0.5rem 0 0;
 	  filter: brightness(80%);
 	  transition: 0.3s ease-in-out transform;
@@ -159,11 +156,17 @@
 
 	  p {
 		font-size: 0.8em;
+		text-wrap: nowrap;
 	  }
 
 	  &.cocktail-alcoholic {
 		background-color: var(--accent);
 		border-color: var(--accent-border);
+	  }
+
+	  &.cocktail-non-alcoholic {
+		background-color: var(--non-alcoholic);
+		border-color: var(--non-alcoholic-border);
 	  }
 	}
 
@@ -190,8 +193,6 @@
 	display: flex;
 	flex-direction: column;
 	padding: 1em;
-	background: #121A29;
-	background: linear-gradient(90deg,rgba(18, 26, 41, 1) 0%, rgba(21, 31, 46, 1) 100%);
 
 	.cocktail-name {
 	  border-bottom: 2px solid var(--font-color);
@@ -231,7 +232,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em 0;
+  padding: 2em 0 1em 0;
 
   & > p {
 	text-align: center;
@@ -247,6 +248,10 @@
 	gap: 0.25em;
 
 	li {
+	  display: flex;
+	  max-width: 3em;
+	  justify-content: center;
+	  align-items: center;
 
 	  button {
 		border-radius: 0.5em;
@@ -255,6 +260,16 @@
 		align-items: center;
 		padding: 0.5em;
 		cursor: pointer;
+		aspect-ratio: 1 / 1;
+		border: 0 solid var(--accent-border);
+
+		&:hover {
+		  border: 1px solid var(--accent-border);
+		}
+
+		&.current {
+		  background-color: var(--accent);
+		}
 
 		i {
 		  font-size: 1em;

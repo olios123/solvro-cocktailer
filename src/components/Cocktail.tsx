@@ -27,7 +27,7 @@ function Cocktail(props: { cocktail: {
                         <p>Alcoholic</p>
                     </div>
                 ) : (
-                    <div className="cocktail-type cocktail-alcoholic">
+                    <div className="cocktail-type cocktail-non-alcoholic">
                         <i className="fi fi-sr-shield-check"></i>
                         <p>Non-alcoholic</p>
                     </div>

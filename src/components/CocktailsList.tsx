@@ -41,7 +41,7 @@ export default function CocktailsList() {
                 setCocktails(res.data.data);
                 setMeta(res.data.meta);
             })
-            .catch(err => setError("Nie udało się pobrać koktajli 😞"))
+            .catch(err => setError("Cannot load cocktails"))
             .finally(() => setLoading(false));
     }, [page]);
 
@@ -51,7 +51,7 @@ export default function CocktailsList() {
 
     return (
         <>
-            <div current-page={page}>
+            <div className="cocktails-list" current-page={page}>
                 {cocktails.map((cocktail) => (
                     <Cocktail key={cocktail.id} cocktail={cocktail}/>
                 ))}
@@ -59,34 +59,5 @@ export default function CocktailsList() {
 
             <Pages meta={meta} onChangePage={setPage} />
         </>
-        // <div className="p-6">
-        //     <h1 className="text-2xl font-bold mb-4">Lista koktajli</h1>
-        //
-        //     {/* Lista koktajli */}
-        //     <ul className="grid grid-cols-2 gap-4">
-        //         {cocktails.map((cocktail) => (
-        //             <li key={cocktail.id} className="p-3 border rounded shadow-sm">
-        //                 <img
-        //                     src={cocktail.imageUrl}
-        //                     alt={cocktail.name}
-        //                     className="w-full rounded"
-        //                 />
-        //                 <p className="mt-2 font-semibold">{cocktail.name}</p>
-        //             </li>
-        //         ))}
-        //     </ul>
-        //
-        //     {/* Komponent paginacji */}
-        //     <Pages meta={meta} onChangePage={setPage} />
-        //
-        //     <p className="mt-3 text-sm text-gray-600">
-        //         Strona {meta.currentPage} z {meta.lastPage} ({meta.total} koktajli)
-        //     </p>
-        // </div>
-        // <div>
-        //     {cocktails.map((cocktail) => (
-        //         <Cocktail cocktail={cocktail}/>
-        //     ))}
-        // </div>
     );
 }
