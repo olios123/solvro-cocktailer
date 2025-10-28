@@ -76,28 +76,56 @@
   border-radius: 0.5em;
   border: 1px solid var(--border);
   font-size: 0.8em;
-  transition: 0.2s ease-in-out;
-  transition-property: border, background-color;
   cursor: pointer;
+  user-select: none;
+}
+.search .search-filter-options li #cocktail-glasses p.selected,
+.search .search-filter-options li #cocktail-categories p.selected,
+.search .search-filter-options li #cocktail-alcohol p.selected {
+  background-color: var(--accent);
+  border: 1px solid var(--accent-border);
+  color: white;
 }
 .search .search-filter-options li #cocktail-glasses p:hover,
 .search .search-filter-options li #cocktail-categories p:hover,
 .search .search-filter-options li #cocktail-alcohol p:hover {
   border: 1px solid var(--accent-border);
-  background-color: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.cocktails-list.empty {
+  gap: 0;
+}
+
+.no-cocktails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+}
+.no-cocktails > * {
+  color: var(--secondary);
+}
+.no-cocktails p {
+  margin-top: 1em;
+}
+.no-cocktails i {
+  display: flex;
+  font-size: 5em;
+  width: fit-content;
 }
 
 .cocktail {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   border-radius: 1rem;
   transition: 0.2s ease-in-out;
   transition-property: background-color, transform, max-height, border, box-shadow;
   position: relative;
   overflow: hidden;
-  margin: 1em 0;
   border: 1px solid var(--border);
+  background: #121A29;
+  background: linear-gradient(90deg, rgb(18, 26, 41) 0%, rgb(21, 31, 46) 100%);
 }
 .cocktail:hover {
   transform: scale(1.025);
@@ -109,6 +137,17 @@
 .cocktail:hover .cocktail-background img {
   transform: scale(1.05);
 }
+.cocktail.loading {
+  display: flex;
+  position: relative;
+  width: 20vw;
+  height: 350px;
+}
+.cocktail.loading:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: none;
+}
 .cocktail .cocktail-background {
   display: flex;
   width: 100%;
@@ -117,7 +156,7 @@
 }
 .cocktail .cocktail-background img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1/1;
   border-radius: 0.5rem 0.5rem 0 0;
   filter: brightness(80%);
   transition: 0.3s ease-in-out transform;
@@ -144,10 +183,15 @@
 }
 .cocktail .cocktail-background .cocktail-type p {
   font-size: 0.8em;
+  text-wrap: nowrap;
 }
 .cocktail .cocktail-background .cocktail-type.cocktail-alcoholic {
   background-color: var(--accent);
   border-color: var(--accent-border);
+}
+.cocktail .cocktail-background .cocktail-type.cocktail-non-alcoholic {
+  background-color: var(--non-alcoholic);
+  border-color: var(--non-alcoholic-border);
 }
 .cocktail .cocktail-background .cocktail-favourite {
   position: absolute;
@@ -169,8 +213,6 @@
   display: flex;
   flex-direction: column;
   padding: 1em;
-  background: #121A29;
-  background: linear-gradient(90deg, rgb(18, 26, 41) 0%, rgb(21, 31, 46) 100%);
 }
 .cocktail .cocktail-content .cocktail-name {
   border-bottom: 2px solid var(--font-color);
@@ -205,7 +247,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em 0;
+  padding: 2em 0 1em 0;
 }
 .page-list > p {
   text-align: center;
@@ -219,6 +261,12 @@
   align-items: center;
   gap: 0.25em;
 }
+.page-list ol li {
+  display: flex;
+  max-width: 3em;
+  justify-content: center;
+  align-items: center;
+}
 .page-list ol li button {
   border-radius: 0.5em;
   display: flex;
@@ -226,6 +274,14 @@
   align-items: center;
   padding: 0.5em;
   cursor: pointer;
+  aspect-ratio: 1/1;
+  border: 0 solid var(--accent-border);
+}
+.page-list ol li button:hover {
+  border: 1px solid var(--accent-border);
+}
+.page-list ol li button.current {
+  background-color: var(--accent);
 }
 .page-list ol li button i {
   font-size: 1em;

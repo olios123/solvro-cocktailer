@@ -82,15 +82,46 @@
 		  border: 1px solid var(--border);
 		  font-size: 0.8em;
 		  cursor: pointer;
+          user-select: none;
+
+          &.selected {
+            background-color: var(--accent);
+            border: 1px solid var(--accent-border);
+            color: white;
+          }
 
 		  &:hover {
 			border: 1px solid var(--accent-border);
 		  }
 		}
-
-
 	  }
 	}
+  }
+}
+
+.cocktails-list.empty {
+  gap: 0;
+}
+
+.no-cocktails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+
+  & > * {
+    color: var(--secondary);
+  }
+
+  p {
+    margin-top: 1em;
+  }
+
+  i {
+    display: flex;
+    font-size: 5em;
+    width: fit-content;
   }
 }
 
@@ -116,6 +147,20 @@
 	.cocktail-background img {
 	  transform: scale(1.05);
 	}
+  }
+
+  // While waiting at response from API
+  &.loading {
+    display: flex;
+    position: relative;
+    width: calc(100vw / 5);
+    height: 350px;
+
+    &:hover {
+      transform: none;
+      border-color: var(--border);
+      box-shadow: none;
+    }
   }
 
   .cocktail-background {

@@ -8,30 +8,27 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-	.cocktail {
-		margin: 1em 0;
-		justify-content: center;
-	}
+  .cocktails-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    padding-top: 1em;
+  }
+
+  .cocktail {
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .banner {
+    padding: 4em 0 !important;
+    font-size: 20px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-	.cocktails-list {
-	  display: grid;
-	  grid-template-columns: repeat(2, 1fr);
-		gap: 1em;
-		padding-top: 1em;
-	}
 
-	.cocktail {
-		margin: 0;
-		justify-content: flex-start;
-	}
-
-	.banner {
-		padding: 4em 0 !important;
-		font-size: 20px;
-	}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
