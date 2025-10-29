@@ -1,37 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-//
-// interface CategoriesProps {
-//     onSelectCategory: (category: string) => void;
-// }
-//
-// function Categories({ onSelectCategory }: CategoriesProps) {
-//     const [categories, setCategories] = useState<string[]>([]);
-//     const [active, setActive] = useState<string>("");
-//     const [loading, setLoading] = useState(true);
-//     const [error, setError] = useState<string | null>(null);
-//
-//     useEffect(() => {
-//         axios.get("https://cocktails.solvro.pl/api/v1/cocktails/categories")
-//             .then(res => setCategories(res.data.data))
-//             .catch(err => console.log(err))
-//             .finally(() => setLoading(false));
-//     }, []);
-//
-//     if (loading) return <div>Loading...</div>;
-//     if (error) return <div>Error: {error}</div>;
-//
-//     return (
-//         <>
-//             {categories.map((category) => (
-//                 <p key={category}>{category}</p>
-//             ))}
-//         </>
-//     );
-// }
-//
-// export default Categories;
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -40,9 +6,12 @@ interface CategoriesProps {
 }
 
 export default function Categories({ onSelectCategory }: CategoriesProps) {
+    // Setting and reading categories
     const [categories, setCategories] = useState<string[]>([]);
+    // Defining with of current categories filter are active
     const [active, setActive] = useState<string>("");
 
+    // GET from Solvro API - categories of cocktails
     useEffect(() => {
         axios.get("https://cocktails.solvro.pl/api/v1/cocktails/categories")
             .then(res => setCategories(res.data.data))
@@ -57,10 +26,11 @@ export default function Categories({ onSelectCategory }: CategoriesProps) {
                 <p
                     key={category}
                     onClick={() => {
+                        // If active category is clicked disable it
                         if (active == category) {
                             setActive("");
                             onSelectCategory("");
-                        } else {
+                        } else { // Otherwise enable it
                         setActive(category);
                         onSelectCategory(category);
                         }

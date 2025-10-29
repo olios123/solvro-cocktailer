@@ -4,6 +4,7 @@ import Cocktail from "./Cocktail";
 import Pages from "./Pages";
 import Filter from "./Filter";
 
+// Cocktail structure
 interface Cocktail {
     id: number;
     name: string;
@@ -16,6 +17,7 @@ interface Cocktail {
     updatedAt: string;
 }
 
+// API call meta structure
 interface Meta {
     total: number;
     perPage: number;
@@ -30,13 +32,18 @@ interface Meta {
 
 
 export default function CocktailsList() {
+    // Loading and displaying cocktails
     const [cocktails, setCocktails] = useState<Cocktail[]>([]);
+    // Meta data from API
     const [meta, setMeta] = useState<Meta | null>(null);
+    // Setting and displaying pages
     const [page, setPage] = useState<number>(1);
+    // Loading state for temporary UI objects
     const [loading, setLoading] = useState(true);
+    // Fetching errors
     const [error, setError] = useState<string | null>(null);
 
-    // Filter
+    // Filter options
     const [filters, setFilters] = useState({
         search: "",
         alcoholic: "all",
@@ -45,8 +52,10 @@ export default function CocktailsList() {
     });
 
     useEffect(() => {
-        setLoading(true);
+        setLoading(true); // Loading until finall response from API
 
+        // Converting data to URL params
+        // Checking if every param is not empty (if empty = default)
         const params = new URLSearchParams();
         params.append("page", page.toString());
         if (filters.search) params.append("name", filters.search);
@@ -55,12 +64,13 @@ export default function CocktailsList() {
         if (filters.alcoholic !== "all")
             params.append("alcoholic", filters.alcoholic);
 
+        // GET from Solvro API
         axios
             .get(`https://cocktails.solvro.pl/api/v1/cocktails?${params.toString()}`)
             .then(res => {
+                // Returning response cocktails and meta
                 setCocktails(res.data.data);
                 setMeta(res.data.meta);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             })
             .catch(err => setError("Cannot load cocktails"))
             .finally(() => setLoading(false));
@@ -73,8 +83,8 @@ export default function CocktailsList() {
     //         ))}
     //     </div>
     // );
-    if (error) return <div>Error: {error}</div>;
-    if (!meta) return null;
+    if (error) return <div>Error: {error}</div>; // Display error
+    if (!meta) return null; // Broken data
 
     return (
         <>

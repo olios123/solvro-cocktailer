@@ -50,6 +50,7 @@ header {
 }
 header .logo {
   display: flex;
+  max-width: 50vw;
 }
 header .logo i {
   display: flex;

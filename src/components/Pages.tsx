@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Structure of API meta
 interface Meta {
     total: number;
     perPage: number;
@@ -11,6 +12,8 @@ interface Meta {
     nextPageUrl: string | null;
     previousPageUrl: string | null;
 }
+
+// TODO move all interface into other folder and make it possible to import
 
 interface PagesProps {
     meta: Meta;
@@ -61,7 +64,11 @@ export default function Pages({ meta, onChangePage }: PagesProps) {
                     ) : (
                         <li key={p}>
                             <button
-                                onClick={() => onChangePage(p as number)}
+                                onClick={() =>
+                                {
+                                    onChangePage(p as number);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
                                 className={`${
                                     p === currentPage ? "current" : ""
                                 }`}

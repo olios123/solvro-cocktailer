@@ -5,7 +5,6 @@ import './styles/responsive.scss';
 
 // Components
 import CocktailsList from './components/CocktailsList';
-import Filter from "./components/Filter";
 
 import reportWebVitals from './reportWebVitals';
 

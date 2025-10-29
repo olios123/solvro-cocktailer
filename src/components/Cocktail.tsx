@@ -2,8 +2,12 @@ import React from 'react';
 import '../styles/cocktail.scss'
 // import './App.css';
 
-
-function Cocktail(props: { cocktail: {
+/**
+ * Creating cocktail tile with provided info about it
+ * @param props - cocktail data from API
+ * @constructor
+ */
+export default function Cocktail(props: { cocktail: {
     id: number;
     name: string;
     category: string;
@@ -47,5 +51,3 @@ function Cocktail(props: { cocktail: {
         </article>
     );
 }
-
-export default Cocktail;

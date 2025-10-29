@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Glasses from "./Search/Glasses";
 import Categories from "./Search/Categories";
 
+// Options to filter
 interface FilterValues {
     search: string;
     alcoholic: "all" | "true" | "false";
@@ -9,11 +10,14 @@ interface FilterValues {
     glass: string;
 }
 
+// Filter function
 interface FilterProps {
     onFilterChange: (filters: FilterValues) => void;
 }
 
+// Filtering
 export default function Filter({ onFilterChange }: FilterProps) {
+    // State for changing values dynamically
     const [filters, setFilters] = useState<FilterValues>({
         search: "",
         alcoholic: "all",
