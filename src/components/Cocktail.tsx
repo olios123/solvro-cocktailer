@@ -37,7 +37,7 @@ export default function Cocktail(props: { cocktail: {
                     </div>
                 )}
                 <div className="cocktail-favourite">
-                    <i className="fi fi-br-heart"></i>
+                    <i className="fi fi-sr-heart"></i>
                 </div>
             </div>
             <div className="cocktail-content">

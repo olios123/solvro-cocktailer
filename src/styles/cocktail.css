@@ -201,9 +201,12 @@
   width: fit-content;
   padding: 0.5em;
   border-radius: 100%;
-  backdrop-filter: blur(2em);
   opacity: 90%;
+  backdrop-filter: blur(2em);
   cursor: pointer;
+}
+.cocktail .cocktail-background .cocktail-favourite.selected {
+  background-color: var(--purple);
 }
 .cocktail .cocktail-background .cocktail-favourite i {
   display: flex;

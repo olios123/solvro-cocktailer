@@ -223,9 +223,13 @@
 	  width: fit-content;
 	  padding: 0.5em;
 	  border-radius: 100%;
-	  backdrop-filter: blur(2em);
 	  opacity: 90%;
+	  backdrop-filter: blur(2em);
 	  cursor: pointer;
+
+	  &.selected {
+		background-color: var(--purple);
+	  }
 
 	  i {
 		display: flex;

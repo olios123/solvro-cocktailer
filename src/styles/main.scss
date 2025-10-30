@@ -51,7 +51,31 @@ header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  top: 0;
   backdrop-filter: blur(0.5em);
+
+  .favourites {
+	border: 1px solid var(--border);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	&.selected {
+		background-color: var(--purple);
+	  border: 1px solid var(--purple-border);
+	}
+
+	&:hover {
+	  border: 1px solid var(--accent-border);
+	}
+
+	i {
+	  display: flex;
+	  margin-right: 0.5em;
+	  font-size: 1.25em;
+	}
+  }
 
   .logo {
 	display: flex;
@@ -60,11 +84,14 @@ header {
 
 	i {
 	  display: flex;
+	  justify-content: center;
+	  align-items: center;
 	  background: #fd331d;
 	  background: linear-gradient(132deg,rgba(253, 51, 29, 1) 0%, rgba(203, 69, 252, 1) 100%);
 	  font-size: 1.5em;
 	  padding: 0.5em;
 	  border-radius: 0.5em;
+	  aspect-ratio: 1 / 1;
 	}
 
 	.logo-content {
@@ -92,8 +119,13 @@ footer {
   flex-direction: column;
   padding: 2em 1em;
   gap: 1em;
+  width: 100%;
 
-  p {
+  .year {
+	margin: 0 0.25em;
+  }
+
+  p, .year {
 	color: var(--secondary-text);
 	font-size: 0.9em;
 	text-align: center;

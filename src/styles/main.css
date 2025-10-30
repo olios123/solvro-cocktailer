@@ -46,7 +46,27 @@ header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  top: 0;
   backdrop-filter: blur(0.5em);
+}
+header .favourites {
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+header .favourites.selected {
+  background-color: var(--purple);
+  border: 1px solid var(--purple-border);
+}
+header .favourites:hover {
+  border: 1px solid var(--accent-border);
+}
+header .favourites i {
+  display: flex;
+  margin-right: 0.5em;
+  font-size: 1.25em;
 }
 header .logo {
   display: flex;
@@ -54,11 +74,14 @@ header .logo {
 }
 header .logo i {
   display: flex;
+  justify-content: center;
+  align-items: center;
   background: #fd331d;
   background: linear-gradient(132deg, rgb(253, 51, 29) 0%, rgb(203, 69, 252) 100%);
   font-size: 1.5em;
   padding: 0.5em;
   border-radius: 0.5em;
+  aspect-ratio: 1/1;
 }
 header .logo .logo-content {
   display: flex;
@@ -82,8 +105,12 @@ footer {
   flex-direction: column;
   padding: 2em 1em;
   gap: 1em;
+  width: 100%;
 }
-footer p {
+footer .year {
+  margin: 0 0.25em;
+}
+footer p, footer .year {
   color: var(--secondary-text);
   font-size: 0.9em;
   text-align: center;

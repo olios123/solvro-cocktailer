@@ -87,9 +87,13 @@ export default function CocktailsList() {
     if (!meta) return null; // Broken data
 
     return (
-        <>
+        <main>
+            <div className="banner">
+                <h1>Explore Our Oocktails!</h1>
+                <p>Browse our catalog of various cocktails. There's something for everyone.</p>
+            </div>
             <div className="search">
-                <Filter onFilterChange={setFilters} />
+                <Filter onFilterChange={setFilters}/>
             </div>
             {cocktails.length > 0 ? (
                 <div className="cocktails-list" current-page={page}>
@@ -108,7 +112,7 @@ export default function CocktailsList() {
 
             {/*TODO favourite cocktails*/}
 
-            <Pages meta={meta} onChangePage={setPage} />
-        </>
+            <Pages meta={meta} onChangePage={setPage}/>
+        </main>
     );
 }

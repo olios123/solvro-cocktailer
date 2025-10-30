@@ -4,7 +4,7 @@ import './styles/main.css';
 import './styles/responsive.scss';
 
 // Components
-import CocktailsList from './components/CocktailsList';
+import App from './components/App'
 
 import reportWebVitals from './reportWebVitals';
 
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <CocktailsList />
+        <App />
     </React.StrictMode>
     // <App />
 );

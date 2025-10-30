@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Glasses from "./Search/Glasses";
-import Categories from "./Search/Categories";
+import Glasses from "./search/Glasses";
+import Categories from "./search/Categories";
 
 // Options to filter
 interface FilterValues {
