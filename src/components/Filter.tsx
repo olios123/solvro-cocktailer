@@ -4,6 +4,8 @@ import Categories from "./search/Categories";
 
 // Options to filter
 interface FilterValues {
+    favourite: boolean;
+    favouriteList: any;
     search: string;
     alcoholic: "all" | "true" | "false";
     category: string;
@@ -19,6 +21,8 @@ interface FilterProps {
 export default function Filter({ onFilterChange }: FilterProps) {
     // State for changing values dynamically
     const [filters, setFilters] = useState<FilterValues>({
+        favourite: false,
+        favouriteList: [],
         search: "",
         alcoholic: "all",
         category: "",
@@ -104,4 +108,3 @@ export default function Filter({ onFilterChange }: FilterProps) {
         </>
     );
 }
-

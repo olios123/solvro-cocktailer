@@ -1,7 +1,11 @@
 import React from "react";
 
+interface HeaderProps {
+    showFavourites: boolean;
+    onToggleFavourites: () => void;
+}
 
-export default function Header() {
+export default function Header({ showFavourites, onToggleFavourites }: HeaderProps) {
     return (
         <header>
             <div className="logo">
@@ -12,11 +16,10 @@ export default function Header() {
                 </div>
             </div>
             <button
-                className="favourites"
-                // onClick={} // TODO change displayed state normal/favourites
+                className={`favourites ${showFavourites ? "selected" : ""}`}
+                onClick={onToggleFavourites}
             >
                 <i className="fi fi-sr-heart"></i>
-                {}
                 <p>Favourites</p>
             </button>
         </header>
