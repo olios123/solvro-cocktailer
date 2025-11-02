@@ -6,7 +6,7 @@
 The project was built to explore working with REST APIs, state management, and modern front-end UI design.
 
 > [!NOTE]  
-> Public link to page: 
+> Public link to page: https://solvro-cocktailer.netlify.app/
 
 ---
 
