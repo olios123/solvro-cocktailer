@@ -1,28 +1,38 @@
 /* Extra small devices (phones, 400px and down) */
 @media only screen and (max-width: 400px) {
-  header button.favourites {
-	aspect-ratio: 1 / 1;
 
-	p {
-	  display: none;
-	}
-
-	i {
-		margin: 0;
-	}
-  }
-
-  .logo {
-	max-width: 80vw !important;
-  }
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-	.cocktail {
-		margin: 1em 0;
-		justify-content: center;
+  header {
+	a p {
+	  display: none;
 	}
+
+	.right-sec button {
+	  aspect-ratio: 1 / 1;
+
+	  p {
+		display: none;
+	  }
+
+	  i {
+		margin: 0 !important;
+	  }
+	}
+  }
+
+  .cocktail.loading {
+	width: 100%;
+	margin: 1em 0;
+  }
+
+  .cocktail {
+	margin: 1em 0;
+	justify-content: center;
+	aspect-ratio: 2 / 3;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -37,6 +47,10 @@
   .cocktail {
     margin: 0;
     justify-content: flex-start;
+
+	&.loading {
+	  margin: 0;
+	}
   }
 
   .banner {
@@ -60,14 +74,11 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 	.cocktails-list {
-		grid-template-columns: repeat(4, auto);
+		grid-template-columns: repeat(4, 1fr);
 		justify-content: center;
 		align-items: center;
-		padding: 1em 2em;
-	}
-	.cocktail {
-		max-width: 300px;
-		height: 100%;
+		padding: 1em 0;
+	  max-width: 1248px;
 	}
 
 

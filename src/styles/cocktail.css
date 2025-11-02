@@ -5,7 +5,7 @@
   padding: 1em;
   border: 1px solid var(--border);
   border-radius: 1rem;
-  background: var(--search-foreground);
+  background: var(--item-gradient);
   gap: 1em;
 }
 .search i {
@@ -126,7 +126,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   background: #121A29;
-  background: linear-gradient(90deg, rgb(18, 26, 41) 0%, rgb(21, 31, 46) 100%);
+  background: var(--item-gradient);
   aspect-ratio: 2/3;
   cursor: pointer;
 }
@@ -143,8 +143,6 @@
 .cocktail.loading {
   display: flex;
   position: relative;
-  width: 20vw;
-  height: 350px;
 }
 .cocktail.loading:hover {
   transform: none;

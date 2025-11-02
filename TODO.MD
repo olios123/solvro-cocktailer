@@ -1,11 +1,11 @@
 # TODO list
 ## root.css
-- Better description for colors
-- Move all colors from `css` files into `root.css`
-- Separate colors and make sections in file to be clearly visible
+- OK Better description for colors 
+- OK Move all colors from `css` files into `root.css`
+- OK Separate colors and make sections in file to be clearly visible
 
 ## All css files
-- Use colors from `root.css`
+- OK Use colors from `root.css`
 - Make it compatible with all web browsers
 
 ## Functions
@@ -20,4 +20,4 @@
 - Share page on Netlify
 
 ## Other
-- Better gradients - make it equal for all elements
+- OK Better gradients - make it equal for all elements

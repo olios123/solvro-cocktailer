@@ -35,8 +35,11 @@ export default function App()
         <>
             <Header
                 showFavourites={showFavourites}
-                onToggleFavourites={() => setShowFavourites((prev) => !prev)}
-            />
+                onToggleFavourites={() => setShowFavourites((prev) => !prev)} showIngredients={false}
+
+                onToggleIngredients={function (): void {
+                    throw new Error("Function not implemented.");
+                }}            />
             <CocktailsList
                 showFavourites={showFavourites}
                 favourites={favourites}

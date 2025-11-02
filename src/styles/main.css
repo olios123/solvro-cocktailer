@@ -21,17 +21,24 @@ i {
   user-select: none;
 }
 
+a,
+a:visited,
+a:link {
+  text-decoration: none;
+}
+
 html, body {
   width: 100%;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 body {
   background: #030814;
-  background: linear-gradient(307deg, rgb(3, 8, 20) 0%, rgb(24, 37, 64) 50%, rgb(3, 8, 20) 100%);
+  background: var(--body-gradient);
 }
 
 ul, ol {
@@ -51,7 +58,12 @@ header {
   top: 0;
   backdrop-filter: blur(0.5em);
 }
-header .favourites {
+header .right-sec {
+  display: flex;
+  gap: 1em;
+}
+header .right-sec .favourites,
+header .right-sec .ingredients {
   border: 1px solid var(--border);
   display: flex;
   justify-content: center;
@@ -62,33 +74,41 @@ header .favourites {
   background-color: transparent;
   transition: all 0.3s ease;
 }
-header .favourites i {
+header .right-sec .favourites i,
+header .right-sec .ingredients i {
   display: flex;
   margin-right: 0.5em;
   font-size: 1.25em;
   transition: transform 0.2s ease, color 0.3s ease;
 }
-header .favourites p {
+header .right-sec .favourites p,
+header .right-sec .ingredients p {
   margin: 0;
   transition: color 0.3s ease;
 }
-header .favourites:hover {
+header .right-sec .favourites:hover,
+header .right-sec .ingredients:hover {
   border-color: var(--accent-border);
 }
-header .favourites:hover i {
+header .right-sec .favourites:hover i,
+header .right-sec .ingredients:hover i {
   transform: scale(1.2) rotate(-10deg);
 }
-header .favourites.selected {
+header .right-sec .favourites.selected,
+header .right-sec .ingredients.selected {
   background-color: var(--purple);
   border-color: var(--purple-border);
 }
-header .favourites.selected i {
+header .right-sec .favourites.selected i,
+header .right-sec .ingredients.selected i {
   color: white;
 }
-header .favourites.selected p {
+header .right-sec .favourites.selected p,
+header .right-sec .ingredients.selected p {
   color: white;
 }
-header .favourites:active {
+header .right-sec .favourites:active,
+header .right-sec .ingredients:active {
   transform: scale(0.95);
 }
 header .logo {
@@ -100,7 +120,7 @@ header .logo i {
   justify-content: center;
   align-items: center;
   background: #fd331d;
-  background: linear-gradient(132deg, rgb(253, 51, 29) 0%, rgb(203, 69, 252) 100%);
+  background: var(--header-icon-gradient);
   font-size: 1.5em;
   padding: 0.5em;
   border-radius: 0.5em;
@@ -209,7 +229,7 @@ main.loading .search {
   min-height: 400px;
 }
 main.loading .search, main.loading .cocktail {
-  background: linear-gradient(90deg, #0f1522, #162030, #0f1522);
+  background: var(--item-loading-gradient);
   background-size: 400% 400%;
   animation: loading-background 2s ease infinite;
 }
@@ -222,36 +242,6 @@ main.loading .search, main.loading .cocktail {
   }
   100% {
     background-position: 0% 50%;
-  }
-}
-
-/* HTML: <div class="loader"></div> */
-.loader {
-  height: 15px;
-  aspect-ratio: 4;
-  display: grid;
-  width: min-content;
-}
-
-.loader:before,
-.loader:after {
-  content: "";
-  grid-area: 1/1;
-  --_g: no-repeat radial-gradient(farthest-side,var(--secondary) 94%,#0000);
-  background: var(--_g) left, var(--_g) right;
-  background-size: 25% 100%;
-  animation: l34 1s infinite;
-  transform: translate(var(--d, 0)) rotate(0);
-}
-
-.loader:after {
-  --d: 37.5%;
-  animation-delay: 0.5s;
-}
-
-@keyframes l34 {
-  50%, 100% {
-    transform: translate(var(--d, 0)) rotate(0.5turn);
   }
 }
 

@@ -17,6 +17,11 @@ interface Cocktail {
     updatedAt: string;
 }
 
+// Ingredient structure
+interface Ingredient {
+
+}
+
 // API call meta structure
 interface Meta {
     total: number;
@@ -31,17 +36,16 @@ interface Meta {
 }
 
 interface CocktailsListProps {
+    // Favourites cocktails
     showFavourites: boolean;
     favourites: Cocktail[];
     onToggleFavourite: (cocktail: Cocktail) => void;
 }
 
 export default function CocktailsList({
-                                          showFavourites,
-                                          favourites,
-                                          onToggleFavourite,
-                                      }: CocktailsListProps
-                                      ) {
+    showFavourites, favourites, onToggleFavourite,
+}: CocktailsListProps)
+{
     // Loading and displaying cocktails
     const [cocktails, setCocktails] = useState<Cocktail[]>([]);
     // Meta data from API
@@ -142,6 +146,7 @@ export default function CocktailsList({
     if (!meta) return null; // Broken data
 
     // Decide with one of the cocktails will be visible
+    // const visibleList = showIngredients || showFavourites || cocktails;
     const visibleCocktails = showFavourites ? favourites : cocktails;
 
     return (

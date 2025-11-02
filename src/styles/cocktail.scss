@@ -5,7 +5,7 @@
   padding: 1em;
   border: 1px solid var(--border);
   border-radius: 1rem;
-  background: var(--search-foreground);
+  background: var(--item-gradient);
   gap: 1em;
 
   i {
@@ -136,7 +136,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   background: #121A29;
-  background: linear-gradient(90deg,rgba(18, 26, 41, 1) 0%, rgba(21, 31, 46, 1) 100%);
+  background: var(--item-gradient);
   aspect-ratio: 2 / 3;
   cursor: pointer;
 
@@ -156,8 +156,8 @@
   &.loading {
     display: flex;
     position: relative;
-    width: calc(100vw / 5);
-    height: 350px;
+    //width: calc(100vw / 5);
+    //height: 350px;
 
     &:hover {
       transform: none;
