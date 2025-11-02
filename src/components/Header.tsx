@@ -15,7 +15,7 @@ export default function Header({
 }: HeaderProps) {
     return (
         <header>
-            <a className="logo" href="#">
+            <a className="logo" href="/index.html" aria-label="Home">
                 <i className="fi fi-sr-martini-glass-citrus"></i>
                 <div className="logo-content">
                     <h2>Solvro Cocktailer</h2>

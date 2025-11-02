@@ -31,7 +31,7 @@ export default function Filter({ onFilterChange }: FilterProps) {
 
     useEffect(() => {
         onFilterChange(filters);
-    }, [filters]);
+    }, [filters, onFilterChange]);
 
     return (
         <>

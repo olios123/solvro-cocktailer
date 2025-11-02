@@ -6,7 +6,7 @@ import './styles/responsive.scss';
 // Components
 import App from './components/App'
 
-import reportWebVitals from './reportWebVitals';
+// import reportWebVitals from './reportWebVitals';
 
 // Main cocktails list
 const root = ReactDOM.createRoot(

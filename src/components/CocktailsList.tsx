@@ -5,7 +5,7 @@ import Pages from "./Pages";
 import Filter from "./Filter";
 
 // Cocktail structure
-interface Cocktail {
+interface CocktailSchema {
     id: number;
     name: string;
     category: string;
@@ -18,9 +18,9 @@ interface Cocktail {
 }
 
 // Ingredient structure
-interface Ingredient {
-
-}
+// interface Ingredient {
+//
+// }
 
 // API call meta structure
 interface Meta {
@@ -38,8 +38,8 @@ interface Meta {
 interface CocktailsListProps {
     // Favourites cocktails
     showFavourites: boolean;
-    favourites: Cocktail[];
-    onToggleFavourite: (cocktail: Cocktail) => void;
+    favourites: CocktailSchema[];
+    onToggleFavourite: (cocktail: CocktailSchema) => void;
 }
 
 export default function CocktailsList({
@@ -47,7 +47,7 @@ export default function CocktailsList({
 }: CocktailsListProps)
 {
     // Loading and displaying cocktails
-    const [cocktails, setCocktails] = useState<Cocktail[]>([]);
+    const [cocktails, setCocktails] = useState<CocktailSchema[]>([]);
     // Meta data from API
     const [meta, setMeta] = useState<Meta | null>(null);
     // Setting and displaying pages
@@ -126,7 +126,7 @@ export default function CocktailsList({
                 setLoading(false);
                 firstLoadRef.current = false;
             })
-    }, [filters, page]);
+    }, [filters, page, showFavourites]);
 
     // If loading state or content is preparing to display
     if (loading || !contentReady) return (

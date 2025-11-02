@@ -27,7 +27,7 @@ export default function Categories({ onSelectCategory }: CategoriesProps) {
                     key={category}
                     onClick={() => {
                         // If active category is clicked disable it
-                        if (active == category) {
+                        if (active === category) {
                             setActive("");
                             onSelectCategory("");
                         } else { // Otherwise enable it

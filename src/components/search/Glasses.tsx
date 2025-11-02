@@ -25,7 +25,7 @@ export default function Glasses({ onSelectGlass }: GlassesProps) {
                 <p
                     key={glass}
                     onClick={() => {
-                        if (active == glass) {
+                        if (active === glass) {
                             setActive("");
                             onSelectGlass("");
                         } else {
