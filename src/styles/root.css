@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root {
 	/* Fonts */
 	--font-size: 16px;
@@ -11,7 +18,7 @@
 	--input-foreground: #1E2939;
 
 	/* Gradients */
-	--body-gradient: linear-gradient(307deg,rgba(3, 8, 20, 1) 0%, rgba(24, 37, 64, 1) 50%, rgba(3, 8, 20, 1) 100%);
+	--body-gradient: linear-gradient(307deg,rgba(3, 8, 20, 1) 0%, rgb(17, 27, 47) 50%, rgba(3, 8, 20, 1) 100%);
 	--header-icon-gradient: linear-gradient(132deg,rgba(253, 51, 29, 1) 0%, rgba(203, 69, 252, 1) 100%);
 	--item-loading-gradient: linear-gradient(90deg, #0f1522, #162030, #0f1522);
 	--item-gradient: linear-gradient(90deg,rgba(18, 26, 41, 1) 0%, rgba(21, 31, 46, 1) 100%);

@@ -1,3 +1,9 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 /* Extra small devices (phones, 400px and down) */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -19,6 +25,8 @@
   }
   .cocktail {
     margin: 1em 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     aspect-ratio: 2/3;
   }
@@ -26,13 +34,17 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .cocktails-list {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1em 1fr;
     grid-template-columns: repeat(2, 1fr);
     gap: 1em;
     padding-top: 1em;
   }
   .cocktail {
     margin: 0;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
   }
   .cocktail.loading {
@@ -47,14 +59,20 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .cocktails-list {
+    -ms-grid-columns: 1fr [3];
     grid-template-columns: repeat(3, 1fr);
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .cocktails-list {
+    -ms-grid-columns: 1fr [4];
     grid-template-columns: repeat(4, 1fr);
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 1em 0;
     max-width: 1248px;

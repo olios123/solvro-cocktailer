@@ -187,7 +187,7 @@ export default function CocktailsList({
                     ))}
                 </div>
             ) : (
-                <div className="cocktails-list empty">
+                <div className="cocktails-list-empty">
                     <div className="no-cocktails">
                         <i className="fi fi-sr-wine-glass-crack"></i>
                         <p>No cocktails found :(</p>
